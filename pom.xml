@@ -406,16 +406,19 @@
                     </plugin>
                 </plugins>
             </build>
-            <distributionManagement>
-                <snapshotRepository>
-                    <id>oss</id>
-                    <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
-                </snapshotRepository>
-                <repository>
-                    <id>oss</id>
-                    <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
-                </repository>
-            </distributionManagement>
+             <!--发布仓库的定义-->
+    <distributionManagement>
+        <repository>
+            <id>release</id>
+            <name>Nexus Release Repository</name>
+            <url>http://10.0.66.30:30957/nexus/repository/maven-releases/</url>
+        </repository>
+        <snapshotRepository>
+            <id>snapshots</id>
+            <name>Nexus Snapshot Repository</name>
+            <url>http://10.0.66.30:30957/nexus/repository/maven-snapshots/</url>
+        </snapshotRepository>
+    </distributionManagement>
         </profile>
         <profile>
             <id>custom-test-runtime-version</id>
